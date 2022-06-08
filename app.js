@@ -42,14 +42,15 @@ app.use('/', blogPageRoute);
 app.use(errorHandler);
 
 //server production assets
-if(process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join("Frontend/build")))
-  app.get('*', (req, res)=> {
-    res.sendFile(path.resolve(__dirname, 'Frontend', 'build', 'index.html'))
-  })
-}
+// if(process.env.NODE_ENV === "production") {
+//   app.use(express.static(path.join("Frontend/build")))
+//   app.get('*', (req, res)=> {
+//     res.sendFile(path.resolve(__dirname, 'Frontend', 'build', 'index.html'))
+//   })
+// }
 
 const port = process.env.PORT || 5000;
+
 app.listen(port, () =>{
     console.log(`App running on port ${port}`);
 });
